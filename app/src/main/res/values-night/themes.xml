@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyFavouriteNovels" parent="Theme.Material3.DayNight.NoActionBar"/>
+
+    <style name="Theme.MyFavouriteNovels.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/app_icon</item>
+        <item name="postSplashScreenTheme">@style/Theme.MyFavouriteNovels</item>
+        <item name="windowSplashScreenBackground">#6A3DE8</item>
+    </style>
+
+    <style name="Theme.MyFavouriteNovels" parent="Base.Theme.MyFavouriteNovels" />
+</resources>
