@@ -2,11 +2,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.myfavouritenovels.MainActivity">
+
     <item
         android:id="@+id/about_page"
-        android:icon="@drawable/user"
+        android:icon="@drawable/ic_user"
         android:title="@string/about"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:iconTint="?colorOnPrimary"
         />
+
 </menu>

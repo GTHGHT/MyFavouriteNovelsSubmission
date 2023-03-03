@@ -1,13 +1,5 @@
 <resources>
     <string name="app_name">My Favourite Novels</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string name="title_activity_about_page">AboutPage</string>
-
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
@@ -44,10 +36,7 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="title_activity_about">AboutActivity</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="creator_name">Gilang Raditya</string>
     <string name="creator_email">gilang.example@gmail.com</string>
     <string name="creator_description">This is an app\'s containing several of my favourites webnovel from novelupdates.com. I\'m currently studying in Mulawarman University, Samarinda, East Kalimantan.</string>
@@ -66,7 +55,6 @@
     <string name="tag">Tag</string>
     <string name="genre">Genre</string>
     <string name="rating_placeholder">%1$s%2$s %3$s</string>
-    <string name="NOVEL_EXTRA">novelInfo</string>
     <string name="share">Share</string>
     <string name="share_placeholder">%1$s from novelupdates.com:\n%2$s</string>
 </resources>

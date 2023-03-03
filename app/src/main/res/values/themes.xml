@@ -1,5 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources>
     <style name="Base.Theme.MyFavouriteNovels" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="toolbarStyle">@style/Theme.MyFavouriteNovels.ToolBar</item>
     </style>
@@ -13,11 +12,6 @@
 
 
     <style name="Theme.MyFavouriteNovels" parent="Base.Theme.MyFavouriteNovels" />
-
-    <style name="Theme.MyFavouriteNovels.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 
     <style name="Theme.MyFavouriteNovels.ToolBar" parent="Widget.Material3.Toolbar" >
         <item name="android:background">?colorPrimary</item>

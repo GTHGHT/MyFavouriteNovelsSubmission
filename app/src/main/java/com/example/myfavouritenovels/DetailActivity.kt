@@ -14,10 +14,16 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.myfavouritenovels.data.NovelInfo
 import com.example.myfavouritenovels.databinding.ActivityDetailBinding
 
+
+
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
     private lateinit var novel: NovelInfo
+
+    companion object {
+        const val NOVELINFO = "novelInfo"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +32,10 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val novel = if (Build.VERSION.SDK_INT >= 33) {
-            intent.getParcelableExtra(getString(R.string.NOVEL_EXTRA), NovelInfo::class.java)
+            intent.getParcelableExtra(NOVELINFO, NovelInfo::class.java)
         } else {
             @Suppress("DEPRECATION")
-            intent.getParcelableExtra(getString(R.string.NOVEL_EXTRA))
+            intent.getParcelableExtra(NOVELINFO)
         }
 
         if (novel != null){
@@ -44,7 +50,7 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
-    fun setInfo(): Unit {
+    fun setInfo() {
         binding.detailToolbar.title = novel.title
         binding.tvTitle.text = novel.title
         binding.tvAuthors.text = novel.authors.reduce { oldValue, nextValue ->
@@ -75,13 +81,13 @@ class DetailActivity : AppCompatActivity() {
 
         binding.buttonNovel.setOnClickListener {
             val viewNovel = Intent(Intent.ACTION_VIEW)
-            viewNovel.setData(Uri.parse(novel.sid))
+            viewNovel.data = Uri.parse(novel.sid)
             startActivity(viewNovel)
         }
 
         binding.buttonImage.setOnClickListener {
             val viewImage = Intent(Intent.ACTION_VIEW)
-            viewImage.setData(Uri.parse(novel.img_link))
+            viewImage.data = Uri.parse(novel.img_link)
             startActivity(viewImage)
         }
     }

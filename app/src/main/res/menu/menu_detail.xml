@@ -5,7 +5,7 @@
     tools:context="com.example.myfavouritenovels.DetailActivity">
 
     <item android:id="@+id/action_share"
-        android:icon="@drawable/share_nodes"
+        android:icon="@drawable/ic_share_nodes"
         android:iconTint="?colorOnPrimary"
         android:title="@string/share"
         app:showAsAction="always"/>

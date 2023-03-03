@@ -2,12 +2,9 @@ package com.example.myfavouritenovels
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfavouritenovels.data.ListNovelAdapter
@@ -15,9 +12,6 @@ import com.example.myfavouritenovels.data.NovelHeader
 import com.example.myfavouritenovels.data.NovelInfo
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import java.lang.reflect.Type
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.google.android.material.color.DynamicColors
 
 
 class MainActivity : AppCompatActivity() {
@@ -54,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         listHeroAdapter.setOnItemClickCallback {
             val detailIntent = Intent(this@MainActivity, DetailActivity::class.java)
-            detailIntent.putExtra(getString(R.string.NOVEL_EXTRA), listNovelInfo[it])
+            detailIntent.putExtra(DetailActivity.NOVELINFO, listNovelInfo[it])
             startActivity(detailIntent)
         }
     }
