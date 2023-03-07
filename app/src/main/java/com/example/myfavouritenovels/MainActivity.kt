@@ -16,9 +16,8 @@ import com.google.gson.reflect.TypeToken
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvNovels: RecyclerView
-    private val listNovel =  ArrayList<NovelHeader>()
+    private val listNovel = ArrayList<NovelHeader>()
     private lateinit var listNovelInfo: ArrayList<NovelInfo>
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val gson = Gson()
         listNovelInfo = gson.fromJson(novelsAsset, listNovelInfoType)
 
-        listNovelInfo.forEach{
+        listNovelInfo.forEach {
             listNovel.add(NovelHeader(it))
         }
 
@@ -54,7 +53,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
@@ -63,8 +61,16 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.about_page -> {
-                val aboutIntent = Intent(this@MainActivity, AboutActivity::class.java)
-                startActivity(aboutIntent)
+                val aboutFragment = AboutFragment()
+                aboutFragment.arguments = Bundle().apply {
+                    putString(AboutFragment.EXTRA_EMAIL, "a261dkx3876@bangkit.academy")
+                }
+                aboutFragment.description = getString(R.string.lorem_ipsum)
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.container, aboutFragment, AboutFragment::class.simpleName)
+                    addToBackStack(null)
+                    commit()
+                }
                 true
             }
             else -> super.onOptionsItemSelected(item)
